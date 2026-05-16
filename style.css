@@ -1,0 +1,186 @@
+:root {
+  --ink: #1a2520;
+  --muted: #5e6e64;
+  --link: #2d4a3b;
+  --link-hover: #1c3127;
+  --accent: #2d4a3b;        /* deep forest */
+  --rule: #e3e9e5;
+  --bg: #ffffff;
+  --side: #f3f5f1;           /* very pale green-tinted */
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--link-hover); text-decoration: underline; text-underline-offset: 3px; }
+
+.layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  min-height: 100vh;
+}
+
+aside {
+  background: var(--side);
+  padding: 56px 32px;
+  border-right: 1px solid var(--rule);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+aside img.headshot {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 4px;
+  display: block;
+  margin: 0 auto 22px;
+  box-shadow: 0 4px 18px rgba(45,74,59,0.15);
+}
+aside h1 {
+  font-family: "Crimson Pro", Georgia, serif;
+  font-size: 30px;
+  margin: 0 0 4px;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+aside .role {
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+aside .role .accent { color: var(--accent); font-weight: 500; }
+aside .address {
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0 0 22px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--rule);
+}
+aside .links {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  font-size: 14px;
+}
+aside .links li {
+  margin-bottom: 9px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+aside .links .icon {
+  width: 16px;
+  display: inline-block;
+  text-align: center;
+  color: var(--muted);
+}
+aside nav {
+  border-top: 1px solid var(--rule);
+  padding-top: 18px;
+}
+aside nav a {
+  display: block;
+  padding: 7px 0;
+  color: var(--ink);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+aside nav a.current { color: var(--accent); font-weight: 600; }
+aside nav a:hover { color: var(--accent); text-decoration: none; }
+
+main {
+  padding: 64px 64px 80px;
+  max-width: 800px;
+}
+main h1.page-title {
+  font-family: "Crimson Pro", Georgia, serif;
+  font-size: 44px;
+  margin: 0 0 26px;
+  font-weight: 600;
+  letter-spacing: -0.8px;
+}
+main h2 {
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: var(--accent);
+  font-weight: 600;
+  margin: 48px 0 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--accent);
+}
+main h2:first-of-type { margin-top: 0; }
+main p {
+  margin: 0 0 16px;
+  color: #2b3340;
+}
+main em {
+  font-family: "Crimson Pro", Georgia, serif;
+  font-size: 1.07em;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.featured {
+  background: var(--side);
+  border-left: 3px solid var(--accent);
+  padding: 22px 26px;
+  margin: 32px 0;
+  border-radius: 0 4px 4px 0;
+}
+.featured .label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.featured .ftitle {
+  font-family: "Crimson Pro", Georgia, serif;
+  font-weight: 600;
+  font-size: 21px;
+}
+
+.pubs { list-style: none; padding: 0; margin: 0; }
+.pubs li { margin-bottom: 16px; line-height: 1.55; }
+.pubs .ptitle { font-weight: 500; color: var(--ink); }
+.pubs .pjournal {
+  font-family: "Crimson Pro", Georgia, serif;
+  font-style: italic;
+  color: var(--muted);
+  font-size: 1.05em;
+}
+.pubs .plinks { font-size: 13px; color: var(--muted); }
+.pubs .plinks a { color: var(--muted); }
+.pubs .plinks a:hover { color: var(--accent); }
+
+@media (max-width: 800px) {
+  .layout { grid-template-columns: 1fr; }
+  aside {
+    position: static;
+    height: auto;
+    padding: 32px 24px;
+  }
+  aside img.headshot { max-width: 170px; }
+  main { padding: 32px 24px 60px; }
+  main h1.page-title { font-size: 36px; }
+}
