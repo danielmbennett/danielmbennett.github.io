@@ -101,19 +101,32 @@ aside .links .icon {
 }
 aside nav {
   border-top: 1px solid var(--rule);
-  padding-top: 18px;
+  padding-top: 22px;
+  margin-top: 12px;
 }
 aside nav a {
   display: block;
-  padding: 7px 0;
+  padding: 11px 16px;
+  margin-bottom: 4px;
   color: var(--ink);
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  font-size: 15px;
   font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+  border-radius: 4px;
+  background: transparent;
+  transition: background 0.15s ease, color 0.15s ease;
 }
-aside nav a.current { color: var(--accent); font-weight: 600; }
-aside nav a:hover { color: var(--accent); text-decoration: none; }
+aside nav a.current {
+  background: var(--accent);
+  color: #ffffff;
+  font-weight: 600;
+}
+aside nav a:hover:not(.current) {
+  background: rgba(45, 74, 59, 0.08);
+  color: var(--accent);
+  text-decoration: none;
+}
 
 main {
   padding: 64px 64px 80px;
